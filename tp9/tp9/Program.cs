@@ -15,8 +15,8 @@ namespace tp9
             
             string Archivo = SoporteParaConfiguracion.CrearArchivo();
             SoporteParaConfiguracion.LeerConfiguracion();
-            string pegar = @"c:\taller_1\repo9\tp9\tp9\bin\Debug";
-            string copiar= @"C:\taller_1\repo9";
+            string pegar = @"C:\repo9cele\tp9\tp9\bin\Debug";
+            string copiar= @"C:\repo9cele";
             string result;
             string [] mostrar;
             result = Path.GetFileName(pegar);

@@ -11,7 +11,7 @@ namespace Helper
     {
         public static string CrearArchivo()
         {
-            string carpeta = @"C:\taller_1\repo9";
+            string carpeta = @"C:\repo9cele\";
             string NombreArch = "prueba";
             string RutarArch = carpeta + NombreArch + ".DAT";
             File.Create(RutarArch); // Crea un archivo Prueba .dat
@@ -25,7 +25,7 @@ namespace Helper
         }
         public static void LeerConfiguracion()
         {
-            string carpeta = @"C:\taller_1\repo9\prub.dat";
+            string carpeta = @"C:\repo9cele\prub.dat";
             if (File.Exists(carpeta))
             {
                 using (BinaryWriter lectura = new BinaryWriter(File.Open(carpeta, FileMode.Open)))
@@ -60,6 +60,7 @@ namespace Helper
     {
         public static void TextoAMorse(string text)
         {
+            
             string palabras = text;
 
             Dictionary<string, string> codigos = new Dictionary<string, string>
@@ -68,7 +69,7 @@ namespace Helper
 
                             {"a", ".-   "}, {"b", "-... "}, {"c", "-.-. "}, {"d", "-..  "},
 
-                            {"e", ".    "}, {"f", "..-. "}, {"g", "--.  "}, {"h", ".... "},
+                            {"e", "."}, {"f", "..-. "}, {"g", "--.  "}, {"h", "...."},
 
                             {"i", "..   "}, {"j", ".--- "}, {"k", "-.-  "}, {"l", ".-.. "},
 
@@ -97,7 +98,7 @@ namespace Helper
                 textTraduc += codigos[letra.ToString()];
             }
             //Creo un archivo .txt y guardar el texto traducido
-            string archivo = @"C:\taller_1\repo9\morse.txt";
+            string archivo = @"C:\repo9cele\morse.txt";
             if (!File.Exists(archivo))
             {
                 File.Create(archivo);
@@ -139,13 +140,13 @@ namespace Helper
 
                     {
 
-                            {".-", "a"}, { "-... ", "b"}, {"-.-. ", "c"}, {"-..  ", "d"},
+                            {".-   ", "a"}, { "-... ", "b"}, {"-.-. ", "c"}, {"-..  ", "d"},
 
-                            {".     ", "e"}, {"..-. ", "f"}, {"--.  ", "g"}, {".... ", "h"},
+                            {".    ", "e"}, {"..-. ", "f"}, {"--.  ", "g"}, {".... ", "h"},
 
                             {"..   ", "i"}, {".--- ", "j"}, {"-.-  ", "k"}, {".-.. ", "l"},
 
-                            {"--   ", "m"}, {"-.    ", "n"}, {"---  ", "o"}, {".--. ", "p"},
+                            {"--    ", "m"}, {"-.   ", "n"}, {"---  ", "o"}, {".--. ", "p"},
 
                             {"--.- ", "q"}, {".-.  ", "r"}, {"...  ", "s"}, {"-    ", "t"},
 
@@ -164,13 +165,22 @@ namespace Helper
                      };
             Console.Write("\n MORSE TRADUCIDO a TEXTO ES: ");
             string textTraduc = "";//variable con nombre de texto traducido
+            int cont = 0;
+            string unaLetra=""; //para leer cada 
             foreach (char letra2 in palabras2)
             {
-                Console.Write(codigos2[letra2.ToString()] + " ");
-                textTraduc += codigos2[letra2.ToString()];
+                cont++;
+                unaLetra += letra2;
+                if(cont % 5 == 0)
+                {
+                    Console.Write(codigos2[unaLetra]);
+                    textTraduc += codigos2[unaLetra];
+                    unaLetra = "";
+                }
+                
             }
             //Creo un archivo .txt y guardar el texto traducido
-            string archivo = @"C:\taller_1\repo9\texto.txt";
+            string archivo = @"C:\repo9cele\texto.txt";
             if (!File.Exists(archivo))
             {
                 File.Create(archivo);
