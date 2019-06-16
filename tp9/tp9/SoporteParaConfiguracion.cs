@@ -16,7 +16,7 @@ namespace Helper
             string RutarArch = carpeta + NombreArch + ".DAT";
             File.Create(RutarArch); // Crea un archivo Prueba .dat
 
-            if (File.Exists(RutarArch)) // Crea un Comprueba si existe el archivo
+            if (File.Exists(RutarArch)) //  Comprueba si existe el archivo
             {
                 Console.WriteLine("Existe "+NombreArch+".DAT");
             }
@@ -184,6 +184,7 @@ namespace Helper
             if (!File.Exists(archivo))
             {
                 File.Create(archivo);
+               
                 string[] TEXT = File.ReadAllLines(archivo);
                 string yaExiste = "";
                 foreach (string ANT in TEXT)
@@ -211,9 +212,71 @@ namespace Helper
                     lectura.Write(yaExiste);
                 }
             }
-
-
+           
         }
+
+        public static void MorseMp3( string morse)
+        {
+            string punto = @"C:\repo9cele\punto.mp3";
+            string raya = @"C:\repo9cele\raya.mp3";
+            string MORSE = @"C:\repo9cele\Morse.mp3";
+
+            FileStream origenP = new FileStream(punto, FileMode.Open);
+            FileStream origenR = new FileStream(raya, FileMode.Open);
+            FileStream destino = new FileStream(MORSE, FileMode.Create);
+            BinaryWriter destinob = new BinaryWriter(destino);
+            //morse = ".";
+            char[] Morse = morse.ToArray();
+            //int pos = 0;
+            for( int i = 0; i < Morse.Length; i++)
+            {
+                Console.Write(Morse[i]);
+                 if (Morse[i] == '.')
+                {
+                   // Console.Write("\n----------------jajaja\n");
+                    byte[] valorArchi = leerBinario(origenP);
+                    //pos ++;
+                    destinob.Write(valorArchi, 0,  valorArchi.Length);
+                    Console.Write("\n");
+                    Console.Write(destinob);
+                    Console.Write("\n");
+                }
+                else
+                {
+                    if (Morse[i] == '-')
+                    {
+                        byte[] valorArchi = leerBinario(origenR);
+                      //  Console.Write("\nllllllllllllllllllllllllll\n");
+                        destinob.Write(valorArchi, 0, valorArchi.Length);
+                        Console.Write("\n");
+                        Console.Write(destinob);
+                        Console.Write("\n");
+                    }
+                }
+            }
+            origenP.Close();
+            origenR.Close();
+            destino.Flush();
+            destino.Close();
+        }
+
+
+        public static byte[] leerBinario (Stream stream)
+        {
+            byte[] buffer = new byte[32768];
+            using (MemoryStream ms = new MemoryStream()) // creando un memory stream 
+            {
+                while (true)
+                {
+                    int read = stream.Read(buffer, 0, buffer.Length); // lee desde la última posición hasta el tamaño del buffer
+                    if (read <= 0)
+                        return ms.ToArray(); // convierte el stream en array 
+                    ms.Write(buffer, 0, read); // graba en el stream 
+                }
+            }
+        }
+
+
 
     }
 }

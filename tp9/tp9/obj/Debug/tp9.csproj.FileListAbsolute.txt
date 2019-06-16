@@ -24,4 +24,12 @@ C:\repo9cele\tp-nro9-NTVGcele\tp9\tp9\obj\Debug\tp9.exe
 C:\repo9cele\tp-nro9-NTVGcele\tp9\tp9\obj\Debug\tp9.pdb
 C:\repo9cele\tp-nro9-NTVGcele\tp9\tp9\bin\Debug\tp9.exe
 C:\repo9cele\tp-nro9-NTVGcele\tp9\tp9\bin\Debug\tp9.pdb
-C:\repo9cele\tp-nro9-NTVGcele\tp9\tp9\obj\Debug\tp9.csprojResolveAssemblyReference.cache
+G:\taller_1\repo9cele\tp-nro9-NTVGcele\tp9\tp9\bin\Debug\tp9.exe.config
+G:\taller_1\repo9cele\tp-nro9-NTVGcele\tp9\tp9\bin\Debug\tp9.exe
+G:\taller_1\repo9cele\tp-nro9-NTVGcele\tp9\tp9\bin\Debug\tp9.pdb
+G:\taller_1\repo9cele\tp-nro9-NTVGcele\tp9\tp9\obj\Debug\tp9.csprojAssemblyReference.cache
+G:\taller_1\repo9cele\tp-nro9-NTVGcele\tp9\tp9\obj\Debug\tp9.csproj.CoreCompileInputs.cache
+G:\taller_1\repo9cele\tp-nro9-NTVGcele\tp9\tp9\obj\Debug\tp9.exe
+G:\taller_1\repo9cele\tp-nro9-NTVGcele\tp9\tp9\obj\Debug\tp9.pdb
+C:\repo9cele\tp-nro9-NTVGcele\tp9\tp9\obj\Debug\tp9.csprojAssemblyReference.cache
+C:\repo9cele\tp-nro9-NTVGcele\tp9\tp9\obj\Debug\tp9.csproj.CoreCompileInputs.cache
